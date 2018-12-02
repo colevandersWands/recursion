@@ -191,15 +191,83 @@ mathematical induction
     {name: '2.5', args: [2.5], expected: false},
     {name: 'e', args: ['e'], expected: false}
   ]);
-  function safe_f(n) {
+  function safe_check(n) {
     if (allowed(n)) {
       return f(n);
     } else {
       return false; // or throw()
     }
   }
-  run_tests(safe_f, test_cases);
+  run_tests(safe_check, test_cases);
 
+
+console.log('--- final refactor ---')
+
+  function f_f(n) {
+    if (!allowed(n)) {
+      return false;
+    }
+
+    if (n === 1) {
+      return 1
+    } else {
+      return f_f(n-1) + f_f(n-1) 
+    }
+  }
+  run_tests(f_f, test_cases);
+
+
+console.log('--- log-it ---')
+
+  test_cases.push({name: '4', args: [4], expected: 9})
+  test_cases.push({name: '5', args: [5], expected: 15})
+  test_cases.push({name: '8', args: [8], expected: 127})
+  test_cases.push({name: '2.5', args: [2.5], expected: true})
+  test_cases.push({name: 'e', args: ['e'], expected: true})
+
+  function f_logged(n, _log) {
+    if (!allowed(n)) {
+      if (_log) {
+        const error = {}
+        error.log = {arg: n, error: 'yes'}
+        error.result = false
+        return error
+      }
+        return false;
+    }
+
+    if (n === 1) {
+      if (_log) {
+        const base = {};
+        base.log = {args: n, result: 1}
+        base.result = 1
+        return base
+      } else {
+        return 1
+      }
+    } else {
+      if (_log) {
+        const next_n = n - 1
+        const left = f_logged(next_n, _log)
+        const right = f_logged(next_n, _log)
+        const built = left.result + right.result;
+
+        const recurse = {};
+        recurse.log = {
+          '0 arg': n,
+          '1 next_n': next_n,
+          '2 left': left.log,
+          '3 right': right.log,
+          '4 built': built
+        }
+        recurse.result = built
+        return recurse
+      } else {
+        return f_f(n-1) + f_f(n-1) 
+      }
+    }
+  }
+  run_tests(f_logged, test_cases, true);
 
 
   // testing utils

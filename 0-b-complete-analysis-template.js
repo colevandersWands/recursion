@@ -15,8 +15,6 @@ console.log('--- test solution ---');
     }
   };
 
-console.log('--- define solution ---')
-
   /*  (given)
     | n is a whole number > 0
     | f(n) === 1                :: if (n === 1)
@@ -202,6 +200,7 @@ console.log('--- final refactor ---');
   };
   run_tests(m_r, test_cases);
 
+
 console.log('--- dummy recursion ---');
 
   function m_r(a, b) {
@@ -274,7 +273,6 @@ console.log('--- log solution ---');
     }
   };
   run_tests(m_r_logged, test_cases, true);
-
 
 
 
