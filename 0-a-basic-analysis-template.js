@@ -32,6 +32,14 @@ mathematical induction
 
 // ----- initial study -------
 
+  function f(n) {
+    if (n === 1) {
+      return 1
+    } else {
+      return f(n-1) + f(n-1) 
+    }
+  }
+
   /*  (given)
     | n is a whole number > 0
     | f(n) === 1                :: if (n === 1)
@@ -100,15 +108,6 @@ mathematical induction
 
 
 // -------- code the thing above, 'proofs' ----------
-
-  function f(n) {
-    if (n === 1) {
-      return 1
-    } else {
-      return f(n-1) + f(n-1) 
-    }
-  }
-
 
   const test_cases = [
     {name: '4', args: [4], expected: 8},
