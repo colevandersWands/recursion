@@ -1,0 +1,17 @@
+recursion is a strange new way of thinking
+  it requires new way of thinking and trust in code
+
+lo's
+  manually solve recursive problems
+  visualize the recursive process
+    recursion is not iterative
+    it is conceptually in parallel
+  build trust with faith-cases
+  be comfortable pulling out the components
+  learn to think locally with confidence
+    if the components work, the function works
+    and if not, you can figure out where & why
+
+exercises
+  given a recursive definition & function
+  

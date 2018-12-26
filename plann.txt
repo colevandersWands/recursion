@@ -1,0 +1,1 @@
+go through and replace 'component' with 'chunk'
