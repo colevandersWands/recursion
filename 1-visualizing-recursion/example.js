@@ -31,6 +31,7 @@ console.log('--- test cases ---')
   run_tests(r, test_cases)
 
 console.log('--- manual replacement ---')
+  // practice applying formal replacement
 
   { console.log('-- r(3) === 4 --')
     const expected = 4;

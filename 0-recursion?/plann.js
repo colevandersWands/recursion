@@ -8,7 +8,7 @@
     translating to formal notation from solution?
 
   exercises
-    - simple for pytut
+    things for pytut to get the js mechanics
     simple breakdown & base case exercises
       bubbles up base case
     returns that forward vs that build
