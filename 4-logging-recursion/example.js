@@ -268,7 +268,7 @@ function log_reports(_target, _cases) {
   const report = {}
   for (let t_case of _cases) {
      report[t_case.name] = _target(...t_case.args) 
-  }
+  };
   console.log(report)
-}
+};
 }

@@ -1,1 +1,203 @@
-go through and replace 'component' with 'chunk'
+go through and replace 'component' with 'chunk' and include 'encapsulating'
+
+/* https://www.researchgate.net/profile/J_Angel_Velazquez-Iturbide/publication/221536738_Recursion_in_gradual_steps_Is_recursion_really_that_difficult/links/0c96052322b44dd4db000000.pdf
+mathematical induction
+  ? https://www.researchgate.net/profile/Isidoro_Hernan-Losada/publication/220807105_Exploring_recursion_with_fibonacci_numbers/links/0c960532adc571f155000000/Exploring-recursion-with-fibonacci-numbers.pdf
+* or only symbolic, like the paper?
+  https://www.khanacademy.org/math/algebra/sequences/constructing-arithmetic-sequences/v/recursive-formula-for-arithmetic-sequence
+    here sequences go from base to final
+    in coding it's the other way around
+    but maybe this is a better way to learn/think about it?
+    just the first couple
+
+*/
+
+proof by induction?
+
+cases to cover
+  single args buildup
+    palindrome
+    mult, pow
+  early turn-around
+    - or treat this as a subset of multi-base-case?
+    palindrome
+  single base case
+    mult, pow
+  multi-base-case
+    palindrome
+  with mapping
+    ../05--sol-des/3--repo/4-recurse-it/mapping-and-recursion.js
+  multi-arg build-up
+    sorting 
+    reversing
+  multi-step break-down
+    reversing
+  cases that arent base but need handling
+  recursive calls in looping
+    ie tree searches
+  branching
+  mutual
+
+mutual recursion
+  https://www.researchgate.net/profile/Cristobal_Flores/publication/220808576_A_gentle_introduction_to_mutual_recursion/links/0f31752ed04f5351e8000000/A-gentle-introduction-to-mutual-recursion.pdf
+  https://en.wikipedia.org/wiki/Mutual_recursion
+  https://rosettacode.org/wiki/Mutual_recursion
+
+- try building 'copies' mental model
+  fits nicely with the 'focus locally, trust recursively' 
+  and with dummy-recursion for testing
+  use the word 'copies'
+    'each call is a copy with different values, kind of like the same variable can have different values'
+
+now that it's before algos
+  stick to simpler problems
+  or just don't go through the whole sequence all at once
+
+env
+  chromdev
+  for inspecting nested, logged logs
+
+logging 
+  array
+    pro
+      recursion is not linear
+    con
+      breaks from what's been done
+  object
+    pro
+      nesting can help understand
+    con
+      super deeply nested
+
+very nice
+  https://javascript.info/recursion
+  from comments: https://quizlet.com/240597881/mjs-recursion-and-stack-flash-cards/
+
+c2
+  http://wiki.c2.com/?PartialRecursiveFunctions
+
+i like what i've done
+  balances design pattern with strategy
+  builds on previous execises
+
+teach recursive problem solving with out recursive functions
+  one approach
+    function sub_task(){}
+    function recursion_simulator(){}
+    but could be confounding
+  another approach
+    don't use the word 'recursion'
+    just solve problems by having sub-task function
+
+exercise ideas
+  same template with chunks, rewrite chunks to pass different problems
+  
+when? unknown nested depths
+
+mathly & wordly things only
+
+sticking to simply a type
+
+sorting?
+
+it's just abstract control flow
+
+articles
+  ** https://medium.freecodecamp.org/learn-recursion-in-10-minutes-e3262ac08a1
+    - many good things
+    tail calls
+    trust, look local
+  https://codeburst.io/learn-and-understand-recursion-in-javascript-b588218e87ea
+    include termination conditions?
+  * https://code.tutsplus.com/tutorials/understanding-recursion-with-javascript--cms-30346
+  https://hackernoon.com/programming-with-js-recursion-31371e2bf808
+    good example to study
+  https://medium.freecodecamp.org/recursion-in-javascript-1608032c7a1f
+    good example to study
+  https://www.learneroo.com/modules/71/nodes/398
+  * https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e
+    local focus, trust recursive - dummy-tester
+  https://www.quora.com/How-do-I-think-recursively
+
+translate recursive solutions from
+  other languages
+    https://www.cs.utah.edu/~germain/PPS/Topics/recursion.html
+  mathematical equations
+    https://sites.fas.harvard.edu/~libs111/files/lectures/unit6-2.pdf
+    find some more simple ones
+
+* include mathy notation from the start
+  something pre, and onwards
+
+problems
+  provide mult-as-add
+    solve power-as-mult
+  ladder climbing
+    and variants
+  https://www.coderbyte.com/language/AB%20Check
+  https://medium.com/@martinnord/javascript-algorithms-challanges-part-1-a56ba47ff43f
+  recurse x number of times (linear)
+  branch-recurse x number of times (2^x)
+  same simple thing (ie. *) with as many possible variants to study
+  non-simple loops that are more clear with recursion
+
+code the little bit un-recursively
+pass the pices in manually
+make it full recursive
+
+constraints
+  no loops
+  no accumulators
+
+add to questions
+  parallel sub-tasks can be done in any order
+
+refactor recursive function calls into args passing
+
+copies model
+
+counting and accumulation are implicit in args & rets
+
+existing problem sets
+  https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
+  https://repl.it/@philx/Recursion-Practice
+  https://github.com/JS-Challenges/recursion-prompts/blob/master/src/recursion.js
+
+don't use execution visualization
+  - focus on strategy 
+  noono https://tylermcginnis.com/javascript-visualizer/?code=var%20deepnis%20%3D%201%3B%0Avar%20doIt%20%3D%20function%28%29%20%7B%0A%20%20if%20%28deepnis--%20%3E%200%29%20doIt%28%29%3B%0A%7D%3B%0AdoIt%28%29%3B
+  or pytut
+
+a diagram: https://stackoverflow.com/questions/8845154/how-does-the-fibonacci-recursive-function-work
+
+writing good test cases
+  hit the base cases
+  hit the recursive cases
+  what are important cases anyway?
+
+recursion
+  https://dl.acm.org/citation.cfm?doid=3159450.3159479
+  https://www.semanticscholar.org/paper/Evaluating-the-Tracing-of-Recursion-in-the-Notional-Wilson-Fisler/337b701ae4417e9c14d2d6b672369711013823d1
+
+-*- http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.10.9952&rep=rep1&type=pdf
+  Bhuiyan et al., 1994; Dicheva and Close, 1997
+    diagnostic testing
+
+*** https://www.researchgate.net/profile/J_Angel_Velazquez-Iturbide/publication/221536738_Recursion_in_gradual_steps_Is_recursion_really_that_difficult/links/0c96052322b44dd4db000000.pdf
+* https://www.researchgate.net/profile/David_Ginat/publication/221538923_Teaching_recursion_in_a_procedural_environment_-_How_much_should_we_emphasize_the_computing_model/links/54b3f8d80cf26833efcfeda7/Teaching-recursion-in-a-procedural-environment-How-much-should-we-emphasize-the-computing-model.pdf
+** http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.25.3778&rep=rep1&type=pdf
+
+vising
+  ~ https://visualgo.net/bn/recursion
+  ? https://www.youtube.com/watch?v=Mv9NEXX1VHc
+
+https://www.quora.com/Should-recursion-be-taught-before-iteration-in-Computer-Science
+
+http://wiki.c2.com/?RecursionRecursion
+http://wiki.c2.com/?PrimitiveRecursive
+http://wiki.c2.com/?ExternalizeTheStack
+http://wiki.c2.com/?TaoOfRecursion
+
+https://javascript.info/recursion
+
+https://www.cs.cornell.edu/Info/Courses/Spring-98/CS211/lectureNotes/07-Recursion.pdf
