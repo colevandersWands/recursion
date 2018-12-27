@@ -9,7 +9,6 @@
 
 
 */
-
 { console.log('--- name of exercise ---')
 
 console.log('--- og code ---')
@@ -82,22 +81,23 @@ console.log('--- log strategy ---')
   }
   log_reports(logged, test_cases)
 
+
 console.log('--- count operations ---')
 
   const count_cases = [
       {name: '1', args: [1], expected: 2},
-      {name: '2', args: [2], expected: 7},
-      {name: '3', args: [3], expected: 17},
-      {name: '4', args: [4], expected: 37},
-      {name: '5', args: [5], expected: 77},
-      {name: '6', args: [6], expected: 157},
-      {name: '7', args: [7], expected: 317},
-      {name: '8', args: [8], expected: 637},
+      {name: '2', args: [2], expected: 8},
+      {name: '3', args: [3], expected: 20},
+      {name: '4', args: [4], expected: 44},
+      {name: '5', args: [5], expected: 92},
+      {name: '6', args: [6], expected: 188},
+      {name: '7', args: [7], expected: 380},
+      {name: '8', args: [8], expected: 764},
     ]
 
   function count(n) {                       let ops_count = 0;
-    const is_base = n === 1;                ops_count++;
-    if (is_base) {                          ops_count++;
+    const is_base = n === 1;                ops_count+=2;
+    if (is_base) {                          
       const turnt = n;                 
       return ops_count;
     } else {
@@ -113,8 +113,8 @@ console.log('--- count operations ---')
 console.log('--- log ops count ---')
 
   function steplog(n) {                     const log = {ops: 0};
-    const is_base = n === 1;                log.ops++;
-    if (is_base) {                          log.ops++;
+    const is_base = n === 1;                log.ops+=2;
+    if (is_base) {                          
       const turnt = n;                    
       return {ops: log.ops, log};                        
     } else {
@@ -136,11 +136,10 @@ console.log('--- explain it ---');
 
   function plaind(n) {                      let ops = 0;
                                             const log = {['0 args']: {n, ops}};
-    const is_base = n === 1;                ops++;
+    const is_base = n === 1;                ops+=2;
                                             log['1 base'] = {is_base, ops};
     if (is_base) {
-      const turnt = n;                      ops++;
-                                            log['2 turnt'] = {turnt, ops};
+      const turnt = n;                      log['2 turnt'] = {turnt, ops};
       return {result: turnt, ops, log};                        
     } else {
       const broke_n = n - 1;                ops++;
