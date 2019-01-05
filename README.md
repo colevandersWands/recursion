@@ -11,4 +11,7 @@ learning objectives
     * trusting the recursive call to do it's job
 * building recursive solutions in a structured way
 * light js call-stack
-* dummy testing
+
+
+todo: 
+* factor out consolemd in favor of inline console styling - so you can see the file & line for each log
